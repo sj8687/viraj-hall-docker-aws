@@ -4,6 +4,25 @@ apps/backend/node_modules
 apps/web/node_modules
 packages/**/node_modules
 
+
+./apps/web/.next
+./apps/web/node_modules
+./apps/web/.env.prod
+./apps/web/.env.local
+
+
+./apps/backend-auth/.env.prod
+./apps/backend-auth/.env
+./apps/backend-auth/node_modules
+./apps/backend-auth/dist
+
+./packages/config-eslint/node_modules
+./packages/database/node_modules
+./packages/database/dist
+./packages/database/.env
+./packages/tailwind-config/node_modules
+./packages/zod-input-validation/node_modules
+
 .next
 dist
 build
