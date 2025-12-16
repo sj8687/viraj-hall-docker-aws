@@ -14,7 +14,7 @@ jobs:
       - name: Docker-login
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}    
+          username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Docker-build-web-image-push
@@ -23,7 +23,7 @@ jobs:
           context: .
           file: ./apps/docker/Dockerfile.web
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/web-viraj:${{ github.sha }}    
+          tags: ${{ secrets.DOCKER_USERNAME }}/web-viraj:${{ github.sha }}
 
       - name: Docker-build-backend-image-push
         uses: docker/build-push-action@v2
@@ -31,6 +31,19 @@ jobs:
           context: .
           file: ./apps/docker/Dockerfile.be
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/backend-viraj:${{ github.sha }}    
+          tags: ${{ secrets.DOCKER_USERNAME }}/backend-viraj:${{ github.sha }}
 
-      
+      - name: Clone repo of ops-viraj and change img both fe and be
+        env:
+          PAT: ${{ secrets.PAT }}
+        run: |
+          git clone https://github.com/sj8687/ops-viraj.git
+          cd ops-viraj
+          sed -i "s|image: shreyash8687/backend-viraj:.*|image: shreyash8687/backend-viraj:${{ github.sha }}|" deployment-backend.yml
+          sed -i "s|image: shreyash8687/web-viraj:.*|image: shreyash8687/web-viraj:${{ github.sha }}|" deployment-web.yml
+
+          git config user.name "Github Actions Bot"
+          git config user.email "actions@github.com"
+          git add .
+          git commit -m "adding latest commit 👍"
+          git push https://${PAT}@github.com/sj8687/ops-viraj.git main
