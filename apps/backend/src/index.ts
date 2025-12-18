@@ -15,8 +15,9 @@ import { allusers } from "./Admin/allusers";
 import "./routes/corn";
 import { generalLimiter } from "./routes/ratelimit";
 import { show } from "./routes/show";
+dotenv.config({ path: '/app/apps/backend/.env' });
 
-dotenv.config();
+// dotenv.config();
 
 
 const app = express();
