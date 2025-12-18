@@ -45,5 +45,5 @@ jobs:
           git config user.name "Github Actions Bot"
           git config user.email "actions@github.com"
           git add .
-          git commit -m "adding latest commit 👍"
+          git commit -m "all web-viraj is working fine👍"
           git push https://${PAT}@github.com/sj8687/ops-viraj.git main
