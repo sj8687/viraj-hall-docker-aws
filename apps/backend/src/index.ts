@@ -17,7 +17,7 @@ import { generalLimiter } from "./routes/ratelimit";
 import { show } from "./routes/show";
 dotenv.config({ path: '/app/apps/backend/.env' });
 
-// dotenv.config();
+dotenv.config();
 
 
 const app = express();
