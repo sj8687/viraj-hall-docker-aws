@@ -45,5 +45,5 @@ jobs:
           git config user.name "Github Actions Bot"
           git config user.email "actions@github.com"
           git add .
-          git commit -m "add env 6 time for backend"
+          git commit -m "add env 7 time for backend"
           git push https://${PAT}@github.com/sj8687/ops-viraj.git main
