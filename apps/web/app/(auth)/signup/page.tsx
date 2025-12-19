@@ -14,7 +14,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
-import { signIn, useSession } from "next-auth/react"; // ✅ correct import here
+import { signIn, useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 
 export default function SignupPage() {
