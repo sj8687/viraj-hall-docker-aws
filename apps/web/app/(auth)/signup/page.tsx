@@ -62,6 +62,7 @@ export default function SignupPage() {
           withCredentials: true,
         }
       );
+      console.log("ahhh ouch...WTF",process.env.NEXT_PUBLIC_Backend_URL);
 
       toast.success(res.data.message || "Signup successful");
       router.push("/login");
