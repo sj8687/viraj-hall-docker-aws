@@ -4,10 +4,10 @@ export function getUrl() {
     if(process.env.DOCKER == "true"){
       return process.env.DOCKER_BACKEND_URL;
     }else{
-      return process.env.NEXT_PUBLIC_Backend_URL;
+      return process.env.NEXT_PUBLIC_BACKEND_URL;
     }
   } else {
     // client url
-    return process.env.NEXT_PUBLIC_Backend_URL;
+    return process.env.NEXT_PUBLIC_BACKEND_URL;
   }
 }
