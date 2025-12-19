@@ -67,6 +67,8 @@ const config: NextAuthConfig = {
           });
         }
 
+                  console.log("ohh secret",baseUrl);
+
         const user = await axios.post(
           `${baseUrl}/add/verify`,
           { email },
@@ -109,6 +111,8 @@ const config: NextAuthConfig = {
         if (!email) {
           throw new Error("Invalid email");
         }
+                          console.log("ohh url",baseUrl);
+
         const res = await axios.post(
           `${baseUrl}/add/user`,
           { email, id, name, image },
