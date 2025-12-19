@@ -50,7 +50,8 @@ export default function SignupPage() {
     try {
 
       console.log("ahhh ouch...WTF",process.env.NEXT_PUBLIC_Backend_URL);
-      
+            console.log("wow",process.env.DOCKER_BACKEND_URL);
+
       const res = await axios.post(
         `${process.env.NEXT_PUBLIC_Backend_URL}/add/signupuser`,
         {
@@ -63,6 +64,8 @@ export default function SignupPage() {
         }
       );
       console.log("ahhh ouch...WTF",process.env.NEXT_PUBLIC_Backend_URL);
+      console.log("wow",process.env.DOCKER_BACKEND_URL);
+      
 
       toast.success(res.data.message || "Signup successful");
       router.push("/login");
