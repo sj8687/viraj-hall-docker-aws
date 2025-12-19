@@ -49,11 +49,11 @@ export default function SignupPage() {
     setLoading(true);
     try {
 
-      console.log("ahhh ouch...WTF",process.env.NEXT_PUBLIC_BACKEND_URL);
+      console.log("ahhh ouch...WTF",process.env.NEXT_PUBLIC_Backend_URL);
             console.log("wow",process.env.DOCKER_BACKEND_URL);
 
       const res = await axios.post(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/add/signupuser`,
+        `${process.env.NEXT_PUBLIC_Backend_URL}/add/signupuser`,
         {
           name,
           email,
