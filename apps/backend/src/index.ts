@@ -30,17 +30,27 @@ app.use(cors({
 }))
 
 
-app.use("/auth",generalLimiter,OTP)
-app.use("/booking",generalLimiter,booking)
-app.use("/payment",generalLimiter,payment)
-app.use("/show",generalLimiter,show)
-app.use("/adminbooking",adminbooking)
-app.use("/contact",generalLimiter,contact)
-app.use("/add", addUser);
-app.use("/bug",generalLimiter,bug);
-app.use("/allusers",allusers)
-app.use("/graph",graph)
+// app.use("/auth",generalLimiter,OTP)
+// app.use("/booking",generalLimiter,booking)
+// app.use("/payment",generalLimiter,payment)
+// app.use("/show",generalLimiter,show)
+// app.use("/adminbooking",adminbooking)
+// app.use("/contact",generalLimiter,contact)
+// app.use("/add", addUser);
+// app.use("/bug",generalLimiter,bug);
+// app.use("/allusers",allusers)
+// app.use("/graph",graph)
 
+app.use("/backend/auth", generalLimiter, OTP);
+app.use("/backend/booking", generalLimiter, booking);
+app.use("/backend/payment", generalLimiter, payment);
+app.use("/backend/show", generalLimiter, show);
+app.use("/backend/adminbooking", adminbooking);
+app.use("/backend/contact", generalLimiter, contact);
+app.use("/backend/add", addUser);
+app.use("/backend/bug", generalLimiter, bug);
+app.use("/backend/allusers", allusers);
+app.use("/backend/graph", graph);
 
 
 
