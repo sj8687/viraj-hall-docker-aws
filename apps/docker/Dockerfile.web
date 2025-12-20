@@ -24,6 +24,8 @@ RUN pnpm install
 
 COPY --from=prepare /app/out/full/ .
 
+ENV NEXT_PUBLIC_Backend_URL="http://ae6472db9998c47ccbb34e6cad75efe4-2041332037.ap-south-1.elb.amazonaws.com/backend"
+
 RUN pnpm turbo build
 
 
