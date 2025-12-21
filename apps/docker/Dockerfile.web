@@ -24,7 +24,7 @@ RUN pnpm install
 
 COPY --from=prepare /app/out/full/ .
 
-ENV NEXT_PUBLIC_Backend_URL="http://fe.virajmultipurposehall.site/backend"
+ENV NEXT_PUBLIC_Backend_URL="https://fe.virajmultipurposehall.site/backend"
 
 RUN pnpm turbo build
 
