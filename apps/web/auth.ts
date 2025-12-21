@@ -153,21 +153,15 @@ const config: NextAuthConfig = {
   useSecureCookies: process.env.AUTH_ENV === "development" ? false : true,
   cookies: {
     sessionToken: {
-      name:
-        process.env.AUTH_ENV === "development"
-          ? "authjs.session-token"
-          : "__Secure-authjs.session-token",
-      options: {
-        httpOnly: true,
-        sameSite: process.env.AUTH_ENV === "development" ? "lax" : "none",
-        path: "/",
-        secure: process.env.AUTH_ENV === "development" ? false : true,
-          domain: process.env.AUTH_ENV === "production"
-                  ? ".virajmultipurposehall.site"
-                  : undefined
-
-      },
+    name: "__Secure-authjs.session-token",
+    options: {
+      httpOnly: true,
+      secure: true,
+      sameSite: "none",
+      path: "/",
+      domain: ".virajmultipurposehall.site",
     },
+  },
   },
 };
 
